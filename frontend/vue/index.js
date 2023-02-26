@@ -18,9 +18,9 @@ var app = new Vue({
     methods:{
         submit: function () {
 
-            question = this.$refs.question.value
-            context = this.$refs.context.value
-            answer = this.$refs.answer.value
+            question = this.$refs.question.value.replace(/(\r\n|\n|\r)/gm, "").replace(',', '')
+            context = this.$refs.context.value.replace(/(\r\n|\n|\r)/gm, "").replace(',', '')
+            answer = this.$refs.answer.value.replace(/(\r\n|\n|\r)/gm, "").replace(',', '')
 
             qa_object = {
                 question:question,
